@@ -9,12 +9,13 @@
 .card{
     display: inline-block;
     text-align: left;
-    width: 200px;
+    width: 300px;
     overflow: hidden;
     height: auto;
     margin: 10px;
     border: 1px solid rgb(0,0,0);
     padding: 10px;
+    border-radius: 8px;
     transition: all .2s ease-in-out;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -25,8 +26,8 @@
 }
 
 img{
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
 }
 .card-name-rating {
     width:100%;
@@ -42,8 +43,11 @@ img{
 #title{
     float:left;
     width: 70%;
+    font-weight: bold;
 }
 .card-desc p{
-    height: 50px;
+    height: 40px;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
