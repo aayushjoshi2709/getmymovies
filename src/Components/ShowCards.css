@@ -1,0 +1,30 @@
+.auto-margin{
+    width: 95%;
+    margin: 10px auto;
+}
+#show-cards{
+    margin-top: 40px;
+}
+.card{
+    float: left;
+    width: 200px;
+    overflow: hidden;
+    height: auto;
+    margin: 10px;
+    border: 1px solid gray;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card-image{
+    height: 200px;
+    width: 200px;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+.card-name-rating p{
+    width: 50%;
+    overflow: hidden;
+    float: left;
+}

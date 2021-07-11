@@ -1,10 +1,5 @@
-.auto-margin{
-    width: 95%;
-    margin: 10px auto;
-}
 Header{
     padding: 10px;
-    
     overflow: hidden;
     height: auto;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
