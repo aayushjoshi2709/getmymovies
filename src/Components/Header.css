@@ -1,0 +1,21 @@
+.auto-margin{
+    width: 95%;
+    margin: 10px auto;
+}
+Header{
+    padding: 10px;
+}
+input{
+    width: 50%;
+    padding: 10px;
+}
+.home-icon{
+    float: right;
+    width: 30px;
+    height: 30px;
+}
+.back-icon{
+    float: left;
+    width: 30px;
+    height: 30px;
+}
