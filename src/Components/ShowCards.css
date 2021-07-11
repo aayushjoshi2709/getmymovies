@@ -1,30 +1,49 @@
 .auto-margin{
-    width: 95%;
+    width: 90%;
     margin: 10px auto;
 }
 #show-cards{
     margin-top: 40px;
+    text-align: center;
 }
 .card{
-    float: left;
+    display: inline-block;
+    text-align: left;
     width: 200px;
     overflow: hidden;
     height: auto;
     margin: 10px;
-    border: 1px solid gray;
+    border: 1px solid rgb(0,0,0);
     padding: 10px;
+    transition: all .2s ease-in-out;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.card-image{
-    height: 200px;
-    width: 200px;
+
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
 img{
     height: 200px;
     width: 200px;
 }
-.card-name-rating p{
-    width: 50%;
+.card-name-rating {
+    width:100%;
     overflow: hidden;
-    float: left;
+    height: 40px;
+}
+.card-name-rating p{
+    overflow: hidden;
+}
+#rating{
+    float: right;
+}
+#title{
+    float:left;
+    width: 70%;
+}
+.card-desc p{
+    height: 50px;
+    overflow: hidden;
 }

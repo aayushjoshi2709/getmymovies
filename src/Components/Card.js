@@ -4,14 +4,14 @@ const Card = (props) => {
     return (
         <div className= 'card'>
             <div className= 'card-image'>
-                <img src={props.card.src} alt="cannot display it"/>
+                <img src={'https://image.tmdb.org/t/p/w500/'+props.card.poster_path} alt="cannot display it"/>
             </div>
             <div className= 'card-name-rating'>
-                <p>{props.card.name}</p>
-                <p>{props.card.rating}</p>
+                <p id="title">{props.card.title}</p>
+                <p id="rating">{'(' + props.card.vote_average + ')'}</p>
             </div>
             <div className= 'card-desc'>
-                <p>{props.card.desc}</p>
+                <p>{props.card.overview}</p>
             </div>
         </div>
     )
