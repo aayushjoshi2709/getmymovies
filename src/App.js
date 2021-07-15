@@ -17,6 +17,7 @@ function App() {
   // stores the target value to fetch data from
   const [target, setTarget] = useState(UPCOMMING_API);
   
+    
   // sets the movie array to be empty when user makes a new search request
   // and fill it with new response
   useEffect(() => {
@@ -44,7 +45,6 @@ function App() {
       .then((data) => {
         // iterating over to each object and pushing it back to the setMovies useState
         setMovies(m=>{ 
-          m.pop();
           return [...m,data.results.map((r)=>m.push(r))];
         });
         setLoading(m=>false)
