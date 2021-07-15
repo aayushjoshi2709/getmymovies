@@ -1,9 +1,8 @@
 import './App.css';
-import Header from './Components/Header';
 import ShowCards from './Components/ShowCards';
 import React, { useEffect, useState,useRef,useCallback } from 'react';
 import ShowDesc from './Components/ShowDesc';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 const UPCOMMING_API = "https://api.themoviedb.org/3/movie/upcoming?api_key=20d913bda50836a3a7c9e7ad70acab65&language=en-US&page=";
 const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=20d913bda50836a3a7c9e7ad70acab65&language=en-US&include_adult=false&query=";
 function App() {
@@ -24,7 +23,6 @@ function App() {
     setLoading(m=>true)
     setPageNo(p=> 1);
     setMovies([]);
-    console.log("1"+target+pageNo);
     fetch(target+pageNo)
       .then((res) => res.json())
       .then((data) => {
@@ -46,6 +44,7 @@ function App() {
       .then((data) => {
         // iterating over to each object and pushing it back to the setMovies useState
         setMovies(m=>{ 
+          m.pop();
           return [...m,data.results.map((r)=>m.push(r))];
         });
         setLoading(m=>false)
@@ -79,25 +78,18 @@ function App() {
   })
   
   return (
-    <>
-      {
         // renders the document based on the url provided
-      }
       <Router>
         <Switch>
-          <Route exact path="/" >
-            {/*sets the header to display searchbar*/}
-            <Header isSearchBar={true} handleOnChange={change} />
-            <ShowCards cards={movies} lastMovieRef={lastMovieElement}/>
+          <Route exact path="/">
+              <ShowCards change={change} cards={movies} lastMovieRef={lastMovieElement}/>
           </Route>
-          <Route exact path="/desc">
-            {/*sets the header to not display searchbar*/}
-            <Header isSearchBar={false} handleOnChange={change} />
-            <ShowDesc cards />
-''          </Route>
+          <Route exact path="/:id">
+              <ShowDesc/>
+          </Route>
         </Switch>
       </Router>
-    </>
+      
   );
 }
 
