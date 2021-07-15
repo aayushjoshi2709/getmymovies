@@ -35,6 +35,7 @@ function App() {
       });
   }, [target])
   
+
   // fetching data from the api while scrolled to next page
   useEffect(() => {
     //changes the state of the loading variable when data is being loaded
@@ -45,14 +46,15 @@ function App() {
       .then((data) => {
         // iterating over to each object and pushing it back to the setMovies useState
         setMovies(m=>{ 
-          return [...m,data.results.map((r)=>m.push(r))];
+          return [...m,...data.results];
         });
+        movies.pop();
         setLoading(m=>false)
       });
     }
   }, [pageNo])
 
- 
+
   // toggle between searched and upcomming movies
   const change = (e) => {
     if (e.target.value !== '') {    
